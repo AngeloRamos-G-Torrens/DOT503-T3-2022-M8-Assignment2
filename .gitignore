@@ -1,2 +1,6 @@
 # Pyhton stuff
 __pycache__
+
+# Pyinstaller stuff
+build
+Main.spec
