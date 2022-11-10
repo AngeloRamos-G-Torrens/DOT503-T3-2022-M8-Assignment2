@@ -21,13 +21,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install pyinstaller
 
-    - name: Removing previously installed executable
+    - name: Package Main application into dist folder with ".exe" file. Replaces previous dist folder.
       run: |
-        rm dist
-
-    - name: Package Main application as into dist folder with ".exe" file
-      run: |
-        pyinstaller Main.py
+        pyinstaller -y Main.py
 
     - name: Commit changes in dist folder with .exe
       run: |
