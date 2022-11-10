@@ -23,7 +23,7 @@ jobs:
 
     - name: Removing previously installed executable
       run: |
-        rm .\dist\
+        rm dist
 
     - name: Package Main application as into dist folder with ".exe" file
       run: |
@@ -51,4 +51,4 @@ jobs:
 
     - name: Run Calculator tests
       run: |
-        python -m unittest .\Calculator_Test.py  
+        python -m unittest Calculator_Test
