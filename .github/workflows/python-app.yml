@@ -7,19 +7,6 @@ on:
 
 
 jobs:
-  run_ls:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout branch
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-
-      - name: Check folder
-        run: |
-          ls -la
-
   build_executable:
     runs-on: ubuntu-latest
     steps:
@@ -57,4 +44,5 @@ jobs:
     steps: 
     - name: Run Calculator tests
       run: |
-        python -m unittest Calculator_Test.py
+        cd $GITHUB_WORKSPACE
+        python -m unittest test/Calculator_Test.py
