@@ -21,6 +21,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install pyinstaller
 
+    - name: Removing previously installed executable
+      run: |
+        rm .\dist\
+
     - name: Package Main application as into dist folder with ".exe" file
       run: |
         pyinstaller Main.py
@@ -42,7 +46,9 @@ jobs:
   test_calculator:
     runs-on: ubuntu-latest
     steps: 
+    - name: Checkout branch
+      uses: actions/checkout@v3
+
     - name: Run Calculator tests
       run: |
-        cd $GITHUB_WORKSPACE
-        python -m unittest test/Calculator_Test.py
+        python -m unittest .\Calculator_Test.py  
