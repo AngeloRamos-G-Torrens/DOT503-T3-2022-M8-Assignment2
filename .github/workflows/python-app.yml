@@ -7,6 +7,12 @@ on:
 
 
 jobs:
+  run_ls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check folder
+        run: |
+          ls
 
   build_executable:
     runs-on: ubuntu-latest
@@ -37,6 +43,7 @@ jobs:
       uses: ad-m/github-push-action@v0.6.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
 
 
   test_calculator:
