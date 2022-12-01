@@ -25,7 +25,7 @@ class MultiplierTest(unittest.TestCase):
 		expected = 16
 		self.assertEqual(actual, expected)
 
-	def test_multiply_failure(self):
-		actual = Calculator.multiply(20, 4)
-		expected = 100
-		self.assertEqual(actual, expected)
+	# def test_multiply_failure(self):
+	# 	actual = Calculator.multiply(20, 4)
+	# 	expected = 100
+	# 	self.assertEqual(actual, expected)
